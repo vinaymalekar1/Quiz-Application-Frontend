@@ -1,6 +1,6 @@
 const API = "http://localhost:8080";
 
-// ================= AUTH =================
+
 
 function login() {
     const username = document.getElementById("username").value;
@@ -45,7 +45,7 @@ function logout() {
     window.location.href = "login.html";
 }
 
-// ================= DASHBOARD =================
+
 
 function loadDashboard() {
     const role = localStorage.getItem("role");
@@ -92,7 +92,7 @@ function loadDashboard() {
         });
 }
 
-// ================= CREATE QUIZ =================
+
 
 function createQuiz() {
     const title = document.getElementById("title").value.trim();
@@ -145,7 +145,7 @@ function deleteQuiz(id) {
 }
 
 
-// ================= QUIZ =================
+
 
 let questions = [];
 let index = 0;
@@ -216,7 +216,7 @@ function resetTimer() {
 }
 
 function nextQuestion() {
-    // save current answer (or skipped)
+   
     answers.push({
         id: questions[index].id,
         response: selected || ""
@@ -224,19 +224,19 @@ function nextQuestion() {
 
     index++;
 
-    // just go to next question silently
+    
     if (index < questions.length) {
         showQuestion();
     } else {
-        submitQuiz();   // auto submit ONLY at end
+        submitQuiz();   
     }
 }
 
 
-// ================= MANUAL SUBMIT =================
+
 
 function confirmSubmit() {
-    // popup ONLY when user clicks Submit button
+    
     if (confirm("Are you sure you want to submit the quiz?")) {
         submitQuiz();
     }
@@ -248,7 +248,7 @@ function submitQuiz() {
 
     const id = localStorage.getItem("quizId");
 
-    // ✅ Push last question if not already pushed
+    
     if (answers.length < questions.length) {
         answers.push({
             id: questions[index].id,
@@ -268,7 +268,7 @@ function submitQuiz() {
     });
 }
 
-// ================= RESULT =================
+
 
 function loadResult() {
     const data = JSON.parse(localStorage.getItem("result"));
@@ -303,7 +303,6 @@ function loadResult() {
     box.prepend(scoreBox);
 }
 
-// ================= NAVIGATION =================
 
 function goToDashboard() {
     window.location.href = "dashboard.html";
@@ -314,7 +313,6 @@ function exitApp() {
     window.location.href = "login.html";
 }
 
-// ================= AUTO LOAD =================
 
 window.onload = function () {
     if (document.getElementById("quizList")) loadDashboard();
