@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>🏆 Result</h1>
+        <button class="danger-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- DEBUG BUTTON (TEMP) -->
+    <button onclick="alert('HTML Click Working')">Test Button</button>
+
+    <div id="resultBox"></div>
+
+    <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+        <button onclick="goToDashboard()">Go to Dashboard</button>
+        <button class="danger-btn" onclick="exitApp()">Exit</button>
+    </div>
+
+</div>
+
+<!-- FORCE LOAD JS -->
+<script src="./js/app.js"></script>
+
+<!-- EXTRA SAFETY -->
+<script>
+    console.log("Result page loaded");
+    console.log("exitApp function =", typeof exitApp);
+    console.log("goToDashboard function =", typeof goToDashboard);
+</script>
+
+</body>
+</html>

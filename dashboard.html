@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>📚 Available Quizzes</h1>
+        <button class="danger-btn" onclick="logout()">Logout</button>
+    </div>
+    
+    <h2 id="welcomeText"></h2>
+
+    <!-- ADMIN PANEL --><div id="adminPanel" style="display:none; margin:20px 0;">
+    <h3>🛠 Admin Panel</h3>
+
+    <input id="title" placeholder="Quiz Title (e.g. Java Basics)">
+    <input id="category" placeholder="Category (e.g. Java)">
+    <input id="numQ" type="number" placeholder="Number of Questions">
+
+    <button onclick="createQuiz()">Create Quiz</button>
+</div>
+
+
+    <div id="quizList"></div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
